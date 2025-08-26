@@ -8,6 +8,7 @@ import TabPanel from 'primevue/tabpanel'
 import TabPanels from 'primevue/tabpanels'
 import LoginForm from './LoginForm.vue'
 import RegistrationForm from './RegistrationForm.vue'
+import ResetPasswordForm from './ResetPasswordForm.vue'
 
 const activeTab = ref('signin') // signin | signup | reset
 </script>
@@ -21,10 +22,13 @@ const activeTab = ref('signin') // signin | signup | reset
 
     <TabPanels>
       <TabPanel value="signin">
-        <LoginForm />
+        <LoginForm @resetPassword="activeTab = 'reset'" />
       </TabPanel>
       <TabPanel value="signup">
         <RegistrationForm />
+      </TabPanel>
+      <TabPanel value="reset">
+        <ResetPasswordForm />
       </TabPanel>
     </TabPanels>
   </Tabs>
